@@ -319,26 +319,26 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub\index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub\index.php">Home</a></li>
-                    <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                    <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub\about.php">About</a></li>
-                    <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                    <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     <?php if ($isLoggedIn): ?>
-                        <li><a href="/uniprojecthub\users\dashboard.php">Dashboard</a></li>
+                        <li><a href="/uniprojectHub-main/users\dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="auth-buttons">
                     <?php if ($isLoggedIn): ?>
-                        <a href="/uniprojecthub\auth\logout.php" class="btn">Logout</a>
+                        <a href="/uniprojectHub-main/auth\logout.php" class="btn">Logout</a>
                     <?php else: ?>
-                        <a href="/uniprojecthub\auth\login.php" class="btn btn-outline">Login</a>
-                        <a href="/uniprojecthub\auth\register.php" class="btn">Register</a>
+                        <a href="/uniprojectHub-main/auth\login.php" class="btn btn-outline">Login</a>
+                        <a href="/uniprojectHub-main/auth\register.php" class="btn">Register</a>
                     <?php endif; ?>
                 </div>
             </nav>
@@ -376,7 +376,7 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="/uniprojecthub\assets\images\our-mission.jpg" alt="Students collaborating" class="img-fluid rounded shadow">
+                        <img src="/uniprojectHub-main/assets\images\our-mission.jpg" alt="Students collaborating" class="img-fluid rounded shadow">
                     </div>
                 </div>
             </div>
@@ -429,7 +429,7 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                 <div class="row justify-content-center g-4">
                     <div class="col-md-4 col-lg-3">
                         <div class="team-card">
-                            <img src="/uniprojecthub\assets\images\rahul.jpg" class="rounded-circle mb-3" alt="Team member">
+                            <img src="/uniprojectHub-main/assets\images\rahul.jpg" class="rounded-circle mb-3" alt="Team member">
                             <h4>Rahul Tyagi</h4>
                             <p class="text-muted">Student</p>
                             <div class="social-links1">
@@ -441,7 +441,7 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                     </div>
                     <div class="col-md-4 col-lg-3">
                         <div class="team-card">
-                            <img src="/uniprojecthub\assets\images\kuldip.jpg" class="rounded-circle mb-3" alt="Team member">
+                            <img src="/uniprojectHub-main/assets\images\kuldip.jpg" class="rounded-circle mb-3" alt="Team member">
                             <h4>Kuldip Rana</h4>
                             <p class="text-muted">Student</p>
                             <div class="social-links1">
@@ -453,7 +453,7 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                     </div>
                     <div class="col-md-4 col-lg-3">
                         <div class="team-card">
-                            <img src="/uniprojecthub\assets\images\praveen.jpg" class="rounded-circle mb-3" alt="Team member">
+                            <img src="/uniprojectHub-main/assets\images\praveen.jpg" class="rounded-circle mb-3" alt="Team member">
                             <h4>Praveen Ray</h4>
                             <p class="text-muted">Student</p>
                             <div class="social-links1">
@@ -465,7 +465,7 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                     </div>
                     <div class="col-md-4 col-lg-3">
                         <div class="team-card">
-                            <img src="/uniprojecthub\assets\images\giriraj.jpg" class="rounded-circle mb-3" alt="Team member">
+                            <img src="/uniprojectHub-main/assets\images\giriraj.jpg" class="rounded-circle mb-3" alt="Team member">
                             <h4>Giriraj</h4>
                             <p class="text-muted">Student</p>
                             <div class="social-links1">
@@ -497,11 +497,11 @@ if ($result) $students_count = $result->fetch_assoc()['count'];
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/uniprojecthub\index.php">Home</a></li>
-                        <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                        <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                        <li><a href="/uniprojecthub\about.php">About Us</a></li>
-                        <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                        <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                        <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                        <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                        <li><a href="/uniprojectHub-main/about.php">About Us</a></li>
+                        <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

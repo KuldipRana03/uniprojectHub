@@ -3,7 +3,7 @@ include(__DIR__ . '/../config.php');
 
 // Redirect if not logged in (removed admin check)
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /uniprojecthub/auth/login.php");
+    header("Location: /uniprojectHub-main/auth/login.php");
     exit();
 }
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } elseif ($_FILES['logo']['size'] > $max_size) {
                 $error = 'File too large. Max 2MB allowed.';
             } elseif (move_uploaded_file($_FILES['logo']['tmp_name'], $target_file)) {
-                $logo_path = "/uniprojecthub/assets/uploads/universities/" . $new_filename;
+                $logo_path = "/uniprojectHub-main/assets/uploads/universities/" . $new_filename;
             } else {
                 $error = 'Error uploading logo.';
             }
@@ -313,18 +313,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub/index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub/index.php">Home</a></li>
-                    <li><a href="/uniprojecthub/universities/universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub/about.php">About</a></li>
-                    <li><a href="/uniprojecthub/contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/universities/universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                 </ul>
                 <div class="auth-buttons">
-                    <a href="/uniprojecthub/auth/logout.php" class="btn btn-outline">Logout</a>
+                    <a href="/uniprojectHub-main/auth/logout.php" class="btn btn-outline">Logout</a>
                 </div>
             </nav>
         </div>

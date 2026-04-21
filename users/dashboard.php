@@ -3,7 +3,7 @@ include(__DIR__ . '/../config.php');
 
 // Redirect if not logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /uniprojecthub\auth\login.php");
+    header("Location: /uniprojectHub-main/auth\login.php");
     exit();
 }
 
@@ -23,7 +23,7 @@ $stmt->close();
 // Get user projects (created by user)
 $createdProjects = [];
 $stmt = $conn->prepare("SELECT p.*, un.name AS university_name,
-                       COUNT(pm.id) AS member_count
+                       COUNT(pm.user_id) AS member_count
                        FROM projects p
                        LEFT JOIN universities un ON p.university_id = un.id
                        LEFT JOIN project_members pm ON p.id = pm.project_id
@@ -42,7 +42,7 @@ $stmt->close();
 // Get user projects (member of)
 $memberProjects = [];
 $stmt = $conn->prepare("SELECT p.*, un.name AS university_name,
-                       COUNT(pm.id) AS member_count
+                       COUNT(pm.user_id) AS member_count
                        FROM projects p
                        LEFT JOIN universities un ON p.university_id = un.id
                        LEFT JOIN project_members pm ON p.id = pm.project_id
@@ -718,16 +718,16 @@ $stmt->close();
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub\index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub\index.php">Home</a></li>
-                    <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                    <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub\about.php">About</a></li>
-                    <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                    <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                 </ul>
                 <div class="user-menu">
                     <div class="user-avatar">
@@ -757,13 +757,13 @@ $stmt->close();
                     </div>
                     
                     <ul class="sidebar-menu">
-                        <li><a href="/uniprojecthub\users\dashboard.php" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                        <li><a href="/uniprojecthub\users\profile.php"><i class="fas fa-user"></i> My Profile</a></li>
+                        <li><a href="/uniprojectHub-main/users\dashboard.php" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="/uniprojectHub-main/users\profile.php"><i class="fas fa-user"></i> My Profile</a></li>
                         <li><a href="my-projects.php"><i class="fas fa-project-diagram"></i> My Projects <span class="badge"><?php echo count($createdProjects) + count($memberProjects); ?></span></a></li>
                         <li><a href="messages.php"><i class="fas fa-envelope"></i> Messages <span class="badge">0</span></a></li>
                         <li><a href="notifications.php"><i class="fas fa-bell"></i> Notifications <span class="badge">0</span></a></li>
-                        <li><a href="/uniprojecthub\users\settings.php"><i class="fas fa-cog"></i> Settings</a></li>
-                        <li><a href="/uniprojecthub\auth\logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        <li><a href="/uniprojectHub-main/users\settings.php"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="/uniprojectHub-main/auth\logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </aside>
                 
@@ -772,7 +772,7 @@ $stmt->close();
                     <!-- Dashboard Header -->
                     <div class="dashboard-header">
                         <h2>Welcome Back, <?php echo htmlspecialchars(explode(' ', $user['full_name'] ?? $user['username'])[0]); ?>!</h2>
-                        <a href="/uniprojecthub\projects\create-project.php" class="btn"><i class="fas fa-plus"></i> Create New Project</a>
+                        <a href="/uniprojectHub-main/projects\create-project.php" class="btn"><i class="fas fa-plus"></i> Create New Project</a>
                     </div>
                     
                     <!-- Stats Cards -->
@@ -813,7 +813,7 @@ $stmt->close();
                                                     <span>Create your first project to get started</span>
                                                 </div>
                                             </div>
-                                            <a href="/uniprojecthub\projects\create-project.php" class="btn">Create Project</a>
+                                            <a href="/uniprojectHub-main/projects\create-project.php" class="btn">Create Project</a>
                                         </li>
                                     <?php else: ?>
                                         <?php foreach ($createdProjects as $project): ?>
@@ -826,7 +826,7 @@ $stmt->close();
                                                         <span><i class="far fa-calendar-alt"></i> <?php echo date('M d, Y', strtotime($project['created_at'])); ?></span>
                                                     </div>
                                                 </div>
-                                                <a href="/uniprojecthub\projects\project-details.php?id=<?php echo $project['id']; ?>" class="btn btn-outline">View Project</a>
+                                                <a href="/uniprojectHub-main/projects\project-details.php?id=<?php echo $project['id']; ?>" class="btn btn-outline">View Project</a>
                                             </li>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
@@ -850,7 +850,7 @@ $stmt->close();
                                                     <span>Browse projects to join and collaborate</span>
                                                 </div>
                                             </div>
-                                            <a href="/uniprojecthub\projects\projects.php" class="btn">Browse Projects</a>
+                                            <a href="/uniprojectHub-main/projects\projects.php" class="btn">Browse Projects</a>
                                         </li>
                                     <?php else: ?>
                                         <?php foreach ($memberProjects as $project): ?>
@@ -863,7 +863,7 @@ $stmt->close();
                                                         <span><i class="far fa-calendar-alt"></i> <?php echo date('M d, Y', strtotime($project['created_at'])); ?></span>
                                                     </div>
                                                 </div>
-                                                <a href="/uniprojecthub\projects\project-details.php?id=<?php echo $project['id']; ?>" class="btn btn-outline">View Project</a>
+                                                <a href="/uniprojectHub-main/projects\project-details.php?id=<?php echo $project['id']; ?>" class="btn btn-outline">View Project</a>
                                             </li>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
@@ -933,11 +933,11 @@ $stmt->close();
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/uniprojecthub\index.php">Home</a></li>
-                        <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                        <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                        <li><a href="/uniprojecthub\about.php">About Us</a></li>
-                        <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                        <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                        <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                        <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                        <li><a href="/uniprojectHub-main/about.php">About Us</a></li>
+                        <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

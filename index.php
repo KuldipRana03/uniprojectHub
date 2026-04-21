@@ -741,26 +741,26 @@ if (!$conn) {
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub\index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub\index.php">Home</a></li>
-                    <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                    <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub\about.php">About</a></li>
-                    <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                    <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     <?php if ($isLoggedIn): ?>
-                        <li><a href="/uniprojecthub\users\dashboard.php">Dashboard</a></li>
+                        <li><a href="/uniprojectHub-main/users\dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="auth-buttons">
                     <?php if ($isLoggedIn): ?>
-                        <a href="/uniprojecthub\auth\logout.php" class="btn">Logout</a>
+                        <a href="/uniprojectHub-main/auth\logout.php" class="btn">Logout</a>
                     <?php else: ?>
-                        <a href="/uniprojecthub\auth\login.php" class="btn btn-outline">Login</a>
-                        <a href="/uniprojecthub\auth\register.php" class="btn">Register</a>
+                        <a href="/uniprojectHub-main/auth\login.php" class="btn btn-outline">Login</a>
+                        <a href="/uniprojectHub-main/auth\register.php" class="btn">Register</a>
                     <?php endif; ?>
                 </div>
             </nav>
@@ -770,7 +770,7 @@ if (!$conn) {
     <!-- Video Hero Section -->
     <section class="video-hero">
         <video class="video-background" autoplay muted loop>
-            <source src="/uniprojecthub\assets\images\videoplayback (1).mp4" type="video/mp4">
+            <source src="/uniprojectHub-main/assets\images\videoplayback (1).mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
@@ -834,7 +834,7 @@ if (!$conn) {
                     $query = "SELECT p.id, p.title, p.description, p.tags, 
                                     u.username, u.full_name, 
                                     un.name AS university_name, un.logo AS university_logo,
-                                    COUNT(pm.id) AS member_count
+                                    COUNT(pm.user_id) AS member_count
                             FROM projects p
                             LEFT JOIN users u ON p.created_by = u.id
                             LEFT JOIN universities un ON p.university_id = un.id
@@ -873,7 +873,7 @@ if (!$conn) {
                                         </div>
                                     <?php endif; ?>
                                     <p><?php echo htmlspecialchars(substr($project['description'], 0, 150) . '...'); ?></p>
-                                    <a href="/uniprojecthub/projects/project-details.php?id=<?php echo $project['id']; ?>" class="btn" style="margin-top: 1rem;">View Project</a>
+                                    <a href="/uniprojectHub-main/projects/project-details.php?id=<?php echo $project['id']; ?>" class="btn" style="margin-top: 1rem;">View Project</a>
                                 </div>
                             </div>
                 <?php
@@ -887,7 +887,7 @@ if (!$conn) {
                 ?>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/uniprojecthub/projects/projects.php" class="btn">View All Projects</a>
+                <a href="/uniprojectHub-main/projects/projects.php" class="btn">View All Projects</a>
             </div>
         </div>
     </section>
@@ -971,11 +971,11 @@ if (!$conn) {
                 ?>
                             <div class="university-card">
                                 <div class="university-logo">
-                                    <img src="<?php echo $university['logo'] ? htmlspecialchars($university['logo']) : '/uniprojecthub/assets/images/default-university.png'; ?>" alt="<?php echo htmlspecialchars($university['name']); ?>">
+                                    <img src="<?php echo $university['logo'] ? htmlspecialchars($university['logo']) : '/uniprojectHub-main/assets/images/default-university.png'; ?>" alt="<?php echo htmlspecialchars($university['name']); ?>">
                                 </div>
                                 <h3><?php echo htmlspecialchars($university['name']); ?></h3>
                                 <p><?php echo htmlspecialchars($university['location']); ?></p>
-                                <a href="/uniprojecthub/universities/university.php?id=<?php echo $university['id']; ?>" class="btn btn-outline" style="margin-top: 1rem;">View Projects</a>
+                                <a href="/uniprojectHub-main/universities/university.php?id=<?php echo $university['id']; ?>" class="btn btn-outline" style="margin-top: 1rem;">View Projects</a>
                             </div>
                 <?php
                         endwhile;
@@ -988,7 +988,7 @@ if (!$conn) {
                 ?>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/uniprojecthub/universities/universities.php" class="btn">View All Universities</a>
+                <a href="/uniprojectHub-main/universities/universities.php" class="btn">View All Universities</a>
             </div>
         </div>
     </section>
@@ -999,8 +999,8 @@ if (!$conn) {
             <h2>Ready to Showcase Your Projects?</h2>
             <p>Join thousands of students who are already collaborating and showcasing their work on UniProjectHub.</p>
             <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-                <a href="/uniprojecthub/auth/register.php" class="btn" style="padding: 0.8rem 2rem;">Get Started</a>
-                <a href="/uniprojecthub/about.php" class="btn btn-outline" style="padding: 0.8rem 2rem;">Learn More</a>
+                <a href="/uniprojectHub-main/auth/register.php" class="btn" style="padding: 0.8rem 2rem;">Get Started</a>
+                <a href="/uniprojectHub-main/about.php" class="btn btn-outline" style="padding: 0.8rem 2rem;">Learn More</a>
             </div>
         </div>
     </section>
@@ -1022,11 +1022,11 @@ if (!$conn) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/uniprojecthub\index.php">Home</a></li>
-                        <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                        <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                        <li><a href="/uniprojecthub\about.php">About Us</a></li>
-                        <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                        <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                        <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                        <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                        <li><a href="/uniprojectHub-main/about.php">About Us</a></li>
+                        <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

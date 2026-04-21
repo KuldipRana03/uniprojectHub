@@ -1,0 +1,5 @@
+ALTER TABLE projects CHANGE user_id created_by INT;
+ALTER TABLE projects ADD COLUMN tags VARCHAR(255);
+ALTER TABLE users CHANGE name full_name VARCHAR(255) NOT NULL;
+ALTER TABLE users ADD COLUMN username VARCHAR(255);
+ALTER TABLE users ADD COLUMN bio TEXT;

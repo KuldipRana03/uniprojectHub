@@ -136,9 +136,9 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile | UniProjectHub</title>
-    <link rel="stylesheet" href="/uniprojecthub\assets\css\header.css">
-    <link rel="stylesheet" href="/uniprojecthub\assets\css\common.css">
-    <link rel="stylesheet" href="/uniprojecthub\assets\css\footer.css">
+    <link rel="stylesheet" href="/uniprojectHub-main/assets\css\header.css">
+    <link rel="stylesheet" href="/uniprojectHub-main/assets\css\common.css">
+    <link rel="stylesheet" href="/uniprojectHub-main/assets\css\footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -373,26 +373,26 @@ if ($result->num_rows > 0) {
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub\index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub\index.php">Home</a></li>
-                    <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                    <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub\about.php">About</a></li>
-                    <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                    <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     <?php if ($isLoggedIn): ?>
-                        <li><a href="/uniprojecthub\users\dashboard.php">Dashboard</a></li>
+                        <li><a href="/uniprojectHub-main/users\dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="auth-buttons">
                     <?php if ($isLoggedIn): ?>
-                        <a href="/uniprojecthub\auth\logout.php" class="btn">Logout</a>
+                        <a href="/uniprojectHub-main/auth\logout.php" class="btn">Logout</a>
                     <?php else: ?>
-                        <a href="/uniprojecthub\auth\login.php" class="btn btn-outline">Login</a>
-                        <a href="/uniprojecthub\auth\register.php" class="btn">Register</a>
+                        <a href="/uniprojectHub-main/auth\login.php" class="btn btn-outline">Login</a>
+                        <a href="/uniprojectHub-main/auth\register.php" class="btn">Register</a>
                     <?php endif; ?>
                 </div>
             </nav>
@@ -494,7 +494,7 @@ if ($result->num_rows > 0) {
                     <div class="tab-pane fade show active" id="projects" role="tabpanel">
                         <?php if (empty($projects)): ?>
                             <div class="alert alert-info">
-                                You haven't created any projects yet. <a href="/uniprojecthub\projects\create-project.php" class="alert-link">Create your first project</a>.
+                                You haven't created any projects yet. <a href="/uniprojectHub-main/projects\create-project.php" class="alert-link">Create your first project</a>.
                             </div>
                         <?php else: ?>
                             <?php foreach ($projects as $project): ?>
@@ -699,11 +699,11 @@ if ($result->num_rows > 0) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/uniprojecthub\index.php">Home</a></li>
-                        <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                        <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                        <li><a href="/uniprojecthub\about.php">About Us</a></li>
-                        <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                        <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                        <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                        <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                        <li><a href="/uniprojectHub-main/about.php">About Us</a></li>
+                        <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

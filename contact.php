@@ -310,26 +310,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/uniprojecthub\index.php" class="logo">
+                <a href="/uniprojectHub-main/index.php" class="logo">
                     <i class="fas fa-project-diagram"></i>
                     <span>UniProjectHub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/uniprojecthub\index.php">Home</a></li>
-                    <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                    <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                    <li><a href="/uniprojecthub\about.php">About</a></li>
-                    <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                    <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                    <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                    <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                    <li><a href="/uniprojectHub-main/about.php">About</a></li>
+                    <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     <?php if ($isLoggedIn): ?>
-                        <li><a href="/uniprojecthub\users\dashboard.php">Dashboard</a></li>
+                        <li><a href="/uniprojectHub-main/users\dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="auth-buttons">
                     <?php if ($isLoggedIn): ?>
-                        <a href="/uniprojecthub\auth\logout.php" class="btn">Logout</a>
+                        <a href="/uniprojectHub-main/auth\logout.php" class="btn">Logout</a>
                     <?php else: ?>
-                        <a href="/uniprojecthub\auth\login.php" class="btn btn-outline">Login</a>
-                        <a href="/uniprojecthub\auth\register.php" class="btn">Register</a>
+                        <a href="/uniprojectHub-main/auth\login.php" class="btn btn-outline">Login</a>
+                        <a href="/uniprojectHub-main/auth\register.php" class="btn">Register</a>
                     <?php endif; ?>
                 </div>
             </nav>
@@ -450,11 +450,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/uniprojecthub\index.php">Home</a></li>
-                        <li><a href="/uniprojecthub\projects\projects.php">Projects</a></li>
-                        <li><a href="/uniprojecthub\universities\universities.php">Universities</a></li>
-                        <li><a href="/uniprojecthub\about.php">About Us</a></li>
-                        <li><a href="/uniprojecthub\contact.php">Contact</a></li>
+                        <li><a href="/uniprojectHub-main/index.php">Home</a></li>
+                        <li><a href="/uniprojectHub-main/projects\projects.php">Projects</a></li>
+                        <li><a href="/uniprojectHub-main/universities\universities.php">Universities</a></li>
+                        <li><a href="/uniprojectHub-main/about.php">About Us</a></li>
+                        <li><a href="/uniprojectHub-main/contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
